@@ -1,0 +1,163 @@
+\documentclass{book}
+\usepackage{graphicx}
+\usepackage{color}
+\usepackage{tocloft}
+\usepackage{titlesec}
+\usepackage{xcolor}
+\usepackage[spanish]{babel}
+\usepackage{fancyhdr}\usepackage{geometry}
+\usepackage{listings}
+\usepackage{authblk}
+\usepackage{hyperref}
+\usepackage[pages=some]{background}
+\usepackage[sectionbib]{natbib}
+\usepackage{chapterbib}
+% añadido por mi
+\usepackage{float}
+
+\bibliographystyle{dcu}
+
+% solo el tículo del capítulo en el índice
+\setcounter{tocdepth}{0}
+
+\backgroundsetup{
+	scale=8,
+	color=black,
+	opacity=0.2,
+	angle=0,
+	position=current page.south east,nodeanchor=south east,
+	hshift=1.0in, vshift=-0.8in,
+	contents={%
+		%\includegraphics[width=0.5\paperwidth,height=0.25\paperheight]{lib/logos/uma-positiva-vertical}
+		\includegraphics{img/uma-positiva-vertical}
+	}%
+}
+
+\hypersetup{
+	colorlinks=true,
+	linkcolor=blue,
+	filecolor=magenta,      
+	urlcolor=cyan,
+	pdftitle={Overleaf Example},
+	pdfpagemode=FullScreen,
+}
+
+\lstdefinestyle{ColorStyle}{
+	basicstyle=\ttfamily\color{black},
+	keywordstyle=\color{magenta},
+	commentstyle=\color{green},
+	stringstyle=\color{red},
+	numbers=left,
+	frame=single
+}
+
+\makeatletter
+\newcommand{\chapterauthor}[1]{%
+	{\parindent0pt\vspace*{-25pt}%
+		\linespread{1.1}\large\scshape#1%
+		\par\nobreak\vspace*{35pt}}
+	\@afterheading%
+}
+\makeatother
+
+% Establece los márgenes de los capítulos a 2 cm a la izquierda y 1 cm en el resto de los lados
+%\titleformat{\chapter}[display]
+%{\newgeometry{left=2cm,right=1cm,top=1cm,bottom=1cm}\normalfont\huge\bfseries}
+%{\filleft\chaptertitlename\ \thechapter}
+%{20pt}
+%{\Huge\color{white}\vspace{1cm}\filright}
+%[\restoregeometry] % Restaura los márgenes originales después del título del capítulo
+
+
+% Define el color del encabezado
+\definecolor{myblue}{RGB}{24, 50, 86}
+
+% Define el formato del encabezado en las páginas de inicio de cada capítulo
+%\titleformat{\chapter}[display]
+%{\normalfont\huge\bfseries}{\filleft\chaptertitlename\ \thechapter}{20pt}{\Huge\color{white}\vspace{1cm}\filright}
+
+\titleformat{\chapter}[frame]
+{\normalfont}  % formato
+{\filleft\normalfont\huge\bfseries \ \chaptertitlename\ \thechapter \ }  % etiqueta
+{30pt}  % separación
+{\Large\bfseries}  % código anterior
+{} % código posterior
+
+% Define el formato de la etiqueta en el índice
+\renewcommand{\cftchapleader}{\cftdotfill{\cftdotsep}}
+
+% Define el formato del encabezado en las demás páginas
+\pagestyle{headings}
+%\renewcommand{\chaptermark}[1]{\markboth{\chaptername\ \thechapter.\ #1.}{}}
+\renewcommand{\chaptermark}[1]{\markboth{\chaptername\ \thechapter.\ #1.}{}}
+\renewcommand{\sectionmark}[1]{\markright{\thesection.\ #1}}
+
+% Define el formato del encabezado en las páginas de inicio de cada capítulo
+%\fancypagestyle{plain}{
+%	\fancyhf{}
+%	\renewcommand{\headrulewidth}{0pt}
+%	\renewcommand{\footrulewidth}{0pt}
+%	\fancyhead[C]{\colorbox{myblue}{\makebox[\dimexpr\linewidth-2\fboxsep][l]{\Huge\sffamily\color{white}\ \textbf{\chaptername\ \thechapter}}}}
+%}
+
+\begin{document}
+	\renewcommand{\tablename}{Tabla}
+	
+	% Portada
+	\BgThispage
+	\thispagestyle{empty}
+	
+	\begin{center}
+		\includegraphics[width=\textwidth]{img/logo1.png}
+		\vspace{2cm}
+		
+		{\Large\textbf{Trabajos de la asignatura}\\}
+		{\Huge\textbf{Programación Avanzada en Bionformática}}
+		\vspace{1cm}
+		
+		{\Large\textbf{Grado en Ingeniería de la Salud}}
+		
+		\vspace{1.5cm}
+		
+		{\Large\textbf{Curso 2012-13}}
+		
+		\vfill
+		
+		\begin{minipage}{0.4\textwidth}
+			\begin{center}
+				\includegraphics[width=\textwidth]{img/etsii}
+			\end{center}
+		\end{minipage}
+		\begin{minipage}{0.4\textwidth}
+			\begin{center}
+%				\textbf{Facultad de Ciencias}\\
+%				\textbf{Universidad de Málaga}\\
+%				\textbf{Año}
+				\includegraphics[width=.6\textwidth]{img/lcc}
+			\end{center}
+		\end{minipage}
+	\end{center}
+	
+	\newpage
+	
+	\chapter*{Prólogo}
+	
+	Este libro, editado por el Prof. Alberto G. Salguero Hidalgo, contiene los trabajos realizados por los alumnos de la asignatura Programación Avanzada en Bioinformática, del Grado en Ingeniería de la Salud de la Universidad de Málaga. 
+	
+	Los alumnos son plenos responsables de su contribución al libro y conservan todos los derechos de autoría del contenido de sus respectivos capítulos.
+	
+	\newpage
+	
+	% Índice
+	\tableofcontents
+	\thispagestyle{empty} % Oculta el número de página en la página del índice
+	
+	\newpage
+	
+	% Contenido del libro
+	\input{capitulo2}
+	
+	%\input{capitulo1}  % se puede borrar para que no salga duplicado.
+
+	
+\end{document}
