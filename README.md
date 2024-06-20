@@ -22,11 +22,11 @@ Antes de la llegada de los Transformers, los modelos de lenguaje basados en rede
 
 Los Transformers introdujeron la arquitectura de atención, superando las limitaciones de las RNN al permitir la atención paralela y capturar relaciones a largo plazo de manera eficiente.
 
+<p align="center">
+  <img src="bert.png" alt="Logo de BERT" style="height: 100px; margin: 60px;">
+  <img src="chatgpt.png" alt="Logo de ChatGPT" style="height: 100px; margin: 60px;">
+</p>
 
-
-   ![Logo de BERT](bert.png)
-
-   ![Logo de ChatGPT](chatgpt.png)
 
 
 
